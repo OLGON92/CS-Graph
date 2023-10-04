@@ -46,5 +46,15 @@ describe('Graph', () => {
     expect(graph.hasEdge("Jasmine", "Ada")).toEqual(false);
   });
 
-  
+  test('should delete a node and all of its adjacent nodes', () => {
+    graph.addNode("Ada");
+    graph.addNode("Jasmine");
+    graph.addNode("Lydia");
+    graph.createEdge("Ada", "Jasmine");
+    graph.createEdge("Ada", "Lydia");
+    graph.removeNode("Ada");
+    expect(graph.hasNode("Ada")).toEqual(false);
+    expect(graph.hasEdge("Jasmine", "Ada")).toEqual(false);
+    expect(graph.hasEdge("Lydia", "Ada")).toEqual(false);
+  });
 });
