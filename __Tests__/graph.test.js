@@ -29,8 +29,7 @@ describe('Graph', () => {
     graph.addNode("Jasmine");
     graph.addNode("Ada");
     graph.createEdge("Jasmine", "Ada");
-    expect(graph.adjacencyList.get("Jasmine").has("Ada")).toEqual(true);
-    expect(graph.adjacencyList.get("Ada").has("Jasmine")).toEqual(true);
+    expect(graph.hasEdge("Ada", "Jasmine")).toEqual(true);
   });
 
   test('check to see if edge exists in graph', () => {
@@ -39,5 +38,5 @@ describe('Graph', () => {
     expect(graph.hasEdge("Jasmine", "Ada")).toEqual(false);
   });
 
-  
+
 });
