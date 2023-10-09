@@ -26,4 +26,8 @@ describe('depth-first search', () => {
   test('should return false if the starting node doe not exist', () => {
     expect(graph.depthFirstReachable("Albert", "Thomas")).toEqual(false);
   });
+
+  test('should check if the first friend in the adjacency list is reachable', () => {
+    expect(graph.depthFirstReachable("Jasmine", "Ada")).toEqual(true);
+  });
 });
